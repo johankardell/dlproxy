@@ -23,10 +23,10 @@ public class ProxyController : ControllerBase
     }
 
     [HttpGet(Name = "GetProxy")]
-    public async Task<string> Get()
+    public async Task<string> Get(string containerName, string fileName)
     {
-        var containerName = "private";
-        var fileName = "test1.txt";
+        // var containerName = "private";
+        // var fileName = "test1.txt";
         var blobServiceClient = new BlobServiceClient(new Uri("https://sajkdldemo.blob.core.windows.net"), new DefaultAzureCredential());
 
         BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
