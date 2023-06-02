@@ -22,6 +22,7 @@ public class ProxyController : ControllerBase
         string blobContents = downloadResult.Content.ToString();
     }
 
+    // https://jkdlproxydemo.azurewebsites.net/proxy?containername=private&fileName=test1.txt
     [HttpGet(Name = "GetProxy")]
     public async Task<string> Get(string containerName, string fileName)
     {
